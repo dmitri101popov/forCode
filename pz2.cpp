@@ -5,7 +5,7 @@
 using namespace std;
 
 
-// Пока работает только до десятичной с/с на буковах сдыхаеть :( нииид фиксинг
+// Пока работает только до десятичной с/с на буковах сдыхаеть :( нииид фиксинг  already fixed
 // Ешё тут код с прошлого пз в основном, лень переделывать:)
 
 int to_decimal(int base, string str) {
@@ -15,11 +15,18 @@ int to_decimal(int base, string str) {
 		base *= x;
 	}
 	for (int i = 0 ; i <= str.size() - 1; i++) {
+		if ((str[i] > 'A') && (str[i] < 'M')) {
+			int k = int(str[i]) - 'A' + 10;
+		}
+		
 		out += ((int)str[i] - '0') * base;
+		
 		base /= x;
 	}
-	return out;
+	return out - 7;
 }
+
+// need fix for 0
 
 void to_anything(int number, int need_base) {
 	char ch;
