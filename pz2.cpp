@@ -5,8 +5,7 @@
 using namespace std;
 
 
-// Пока работает только до десятичной с/с на буковах сдыхаеть :( нииид фиксинг  already fixed
-// Ешё тут код с прошлого пз в основном, лень переделывать:)
+
 
 int to_decimal(int base, string str) {
 	int x = base;
@@ -23,7 +22,12 @@ int to_decimal(int base, string str) {
 		
 		base /= x;
 	}
-	return out - 7;
+	if (base > 10) {
+		return out - 7;
+	}
+	else {
+		return out;
+	}
 }
 
 // need fix for 0
@@ -65,7 +69,8 @@ int main() {
 	cout << "ENTER: f_number_base >> f_number >> out_number_base" << endl;
 	cin >> f_number_base >> f_number >> out_number_base;
 	x = to_decimal(f_number_base, f_number);
-	to_anything(x, out_number_base);
+	cout << x << endl;
+	//to_anything(x, out_number_base);
 
 
 
